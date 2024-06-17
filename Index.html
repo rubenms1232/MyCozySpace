@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Library, Virtual, Ambience, Music, Study, Relax, Background Noise">
+    <meta name="author" content="Rúben Silva">
+    <title>My cozy Space</title>
+    <link rel="icon" type="image/PNG" href="assets/favicon.PNG" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <section class="header">
+        <button id="modalButton" class="nav-links">about</button>
+        <div>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">×</span>
+                    <center>
+                        <h2>about</h2>
+                    </center><br>
+                    <p>
+                        Remember that feeling? The hushed whispers, the scent of old paper, the soft click of turning pages... That's the library, a haven for bookworms, a sanctuary for students, and a haven for those who just need a little peace and quiet. 
+                    
+                        It's more than just books – it's an atmosphere, a vibe, a quiet hum of concentration and creativity.  And while we can't replicate that exact feeling online, I hope this little corner of the internet can bring a touch of that library magic to your home. 
+                    
+                        Mystudyspace is a virtual haven for book lovers, students, and anyone who misses that familiar feeling. It's a to-do list and a collection of calming sounds designed to help you focus, relax, and get things done. 
+                    
+                        So, grab a warm beverage (or a cold one, no judgment here! ), settle in, and let's create some magic together! 
+                    
+                        Inspired by <a href="https://imissmycafe.com/" target="_blank">IMissMyCafe</a>, <a href="https://imissmylibary.com/" target="_blank">IMissMylibary</a>,<a href="http://imissmybar.com/" target="_blank">IMissMyBar</a>, and <a href="https://imisstheoffice.eu/" target="_blank">IMissMyOffice</a>. Sound effects obtained from <a href="https://www.freesound.org" target="_blank">ZapSplat</a>. Code by <a href="https://www.linkedin.com/in/rubenams/" target="_blank">Rúben Silva</a> and illustration by <a href="https://storyset.com/people/" target="_blank">People illustrations by Storyset</a>. No copyright infringement intended.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="left">
+                    <!--<div class="pomodoro-timer">
+                    <h3>Pomodoro Timer</h3>
+                    <div id="timer-display">25:00</div>
+                    <button id="start-timer">Start</button>
+                    <button id="reset-timer">Reset</button>
+                    </div>-->
+            
+            <div class="container">
+                <input type="text" class="txtb" placeholder="Add a task">
+                <div class="notcomp">
+                    <h3>Not Completed</h3>
+                </div>
+                <div class="comp">
+                    <h3>Completed</h3>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(".txtb").on("keyup", function (e) {
+                    if (e.keyCode == 13 && $(".txtb").val() != "") {
+                        var task = $("<div class='task'></div>").text($(".txtb").val());
+                        var del = $("<i class='fas fa-trash-alt'></div>").click(function () {
+                            var p = $(this).parent();
+                            p.fadeOut(function () {
+                                p.remove();
+                            })
+                        });
+                        var check = $("<i class='fas fa-check'></div>").click(function () {
+                            var p = $(this).parent();
+                            p.fadeOut(function () {
+                                $(".comp").append(p);
+                                p.fadeIn();
+                            });
+                            $(this).remove();
+                        });
+                        task.append(del, check);
+                        $(".notcomp").append(task);
+                        $(".txtb").val("");
+                    }
+                });
+            </script>
+        </div>
+
+        <div class="middle">
+            <div class="top-section">
+                <div class="text-box">
+                    <div class="pomodoro-timer">
+                        <h3>Pomodoro Timer</h3>
+                        <div id="timer-display">25:00</div>
+                        <button id="start-timer">Start</button>
+                        <button id="reset-timer">Reset</button>
+                        </div>
+                    <!--<h1 id="title">My cozy Space</h1>-->
+                    <!--<p id="subtitle">Do it My way</p>-->
+                </div>
+                           </div>
+            <img src="assets/image.png" alt="library sketch" class="illustration" id="mainIllustration">
+        </div>
+
+        <div class="right">
+            <div class="audio-controls"> 
+                <div class="massPause">
+                    <p id="pauseNotice"> Pause all  </p>
+                    <input type="checkbox" id="pauseAll" onclick="pauseAll()">
+                </div>
+                <div class="audio-container" id="audioContainer"> 
+                    </div>
+            </div>
+        </div>
+    </section>
+    <!--<div class="mode-controls">
+        <button onclick="changeMode('library')">Library</button>
+        <button onclick="changeMode('cafe')">Cafe</button>
+        <button onclick="changeMode('beach')">Beach</button>
+    </div>-->
+
+    <script src="script.js"></script>
+    
+</body>
+
+</html>

@@ -1,0 +1,484 @@
+/* style.css */
+
+body {
+    background-color: #e0dddd; /* Default background color */
+    font-family: 'Nanum Myeongjo', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0; 
+}
+
+.header {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.nav-links {
+    background-color: transparent;
+    color: black;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: 'Nanum Myeongjo', serif;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    font-family: 'Nanum Myeongjo', serif;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.content {
+    display: flex;
+    width: 100%;
+    max-width: 1400px; /* Adjust as needed */
+    height: 600px;
+    max-height: 1200px;
+    margin: 20px auto;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.left,
+.middle,
+.right {
+    flex: 1;
+    padding: 20px;
+    text-align: center; /* Center text within each section */
+}
+
+.middle {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: flex-start; /* Align items to the top */
+    align-items: center;
+}
+
+.top-section { 
+    text-align: center; /* Center the title and timer */
+    margin-bottom: 20px;   /* Add spacing between title/timer and illustration */
+}
+
+/* Style for the illustration */
+.illustration {
+    max-width: 90%;
+    height: auto;
+    border-radius: 10px;
+    
+}
+
+.text-box {
+    margin-bottom: 20px;
+}
+
+.text-box h1 {
+    font-size: 3em;
+    color: #333;
+}
+
+.text-box p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+.container {
+    width: 400px;
+    max-width: 370px;
+    margin: 0 auto;
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.txtb {
+    width: calc(100% - 60px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.notcomp,
+.comp {
+    margin-bottom: 20px;
+}
+
+
+.task {
+    display: flex;
+    align-items: center;  /* Vertically align items to the center */
+    justify-content: space-between; /* Evenly distribute space between items */
+    background-color: #f4aa17da;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.task p {  /* Style for the task text */
+    margin-right: 10px; /* Add some space between the text and icons */
+}
+
+.task .icons { /* Create a container for the icons */
+    display: flex;
+    align-items: center; /* Vertically align icons */
+}
+
+.task i {  /* Style for icons */
+    margin-left: 5px; /* Add space between the icons */
+    cursor: pointer;
+}
+
+.fa-trash-alt:hover {
+    color: red;
+}
+
+.fa-check:hover {
+    color: green;
+}
+
+
+
+
+
+.massPause {
+    display: flex;
+    align-items: center; /* Vertically align items */
+    margin-bottom: 10px; /* Add some spacing below */
+}
+
+.massPause p {
+    margin-right: 10px; /* Add spacing between the text and checkbox */
+}
+
+/* Styling for the scrollable audio section */
+.audio-controls {
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+    max-height: 500px; 
+    max-width: 500px;/* Set a maximum height for the audio section */
+    padding-right: 10px; /* Add some padding for visual comfort */
+}
+
+.audio-container {
+    display: flex;
+    flex-direction: column; /* Arrange audio elements vertically */
+    gap: 10px; /* Spacing between audio elements */
+}
+
+.audio {
+    display: flex;
+    align-items:flex-start;
+    background-color: #f9f9f900;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s ease; /* Add a transition effect */
+}
+
+.audio:hover {
+    background-color: #e9e9e9; /* Change background color on hover */
+}
+
+.audio span {
+    display: flex;
+    align-items: center;
+}
+
+.audio p {
+    margin: 0 10px 0 0; /* Adjust spacing around the text */
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide any text that overflows */
+    text-overflow: ellipsis; /* Add ellipsis to truncated text */
+    max-width: 150px; /* Adjust maximum width as needed */
+}
+
+.audio button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.audio button:before {
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+    content: "\f04b"; /* Play icon */
+    font-size: 1.2em;
+}
+
+.audio.pressed button:before {
+    content: "\f04c"; /* Pause icon */
+}
+
+/* Styling for the volume control */
+.volume-control {
+    display: flex;
+    align-items: center; 
+    position: relative; 
+}
+
+.vol-control {
+    -webkit-appearance: none;
+    width: 80px;
+    height: 8px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    border-radius: 50px;
+}
+
+.vol-control::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.vol-control::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+/* Styling for the illustration controls */
+.illustration-controls {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.illustration-controls button {
+    background-color: #6a994e; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 25px;
+}
+/* ... your existing styles ... */
+
+.pomodoro-timer {
+    background-color: transparent;
+    max-width: 400px;
+    width: 350px;
+    max-height: 200px; /* You might not need max-height */
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 10px;
+
+    /* Add these properties */
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+}
+
+.timer-buttons {
+    display: flex; 
+    justify-content: space-around; /* Evenly distribute buttons */
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Make buttons container take full width */
+}
+
+#timer-display {
+    font-size: 2em;
+    margin: 10px 0;
+    margin-left: 15px;
+    margin-right: 15px;
+    /* Remove align-items: center; (not needed here) */
+}
+
+
+#start-timer, 
+#reset-timer {
+    padding: 8px 16px;
+    margin: 0 0px; /* You can adjust this for spacing */
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin: 5px;
+    
+    /* Remove margin-bottom: 10px; (use margin on #timer-display or gap on .pomodoro-timer instead) */
+}
+
+/* Style for the sound control */
+.audio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.audio .volume-control {
+    margin-top: 5px;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center; 
+    position: relative; 
+}
+
+.vol-control {
+    -webkit-appearance: none;
+    width: 300px;
+    height: 8px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    border-radius: 50px;
+    margin-top: 5px;
+}
+
+.vol-control::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.vol-control::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.mode-controls {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.mode-controls button {
+    background-color: #6a994e; 
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+/* Styles for different modes */
+.mode-library {
+    /* Library mode styles */
+    background-color: #A67B5B;/* Brown */
+    /* ... other library-specific styles ... */
+}
+
+.mode-cafe {
+    /* Cafe mode styles */
+    background-color: #f5e0d7; /* Light brown */
+    /* ... other cafe-specific styles ... */
+}
+
+.mode-beach {
+    /* Beach mode styles */
+    background-color: #55AD9B; /* Light blue */
+    /* ... other beach-specific styles ... */
+}
+
+/* Styles for the illustration based on mode */
+.illustration-library {
+    max-width: 70%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.illustration-cafe {
+    
+    
+        max-width: 70%;
+        height: auto;
+        border-radius: 10px;
+        
+      
+  
+}
+
+.illustration-beach {
+    max-width: 70%;
+    height: auto;
+    border-radius: 10px;
+}
